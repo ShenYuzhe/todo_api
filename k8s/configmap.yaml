@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: todo-config
+  namespace: todo
+data:
+  MESSAGE: "Hello from Kubernetes 👋 (Python)"
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6379"
