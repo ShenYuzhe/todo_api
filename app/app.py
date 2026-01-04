@@ -43,6 +43,15 @@ def add_todo():
     r.set("todos", json.dumps(todos))
     return jsonify({"ok": True}), 201
 
+@app.get("/cat")
+def get_cat():
+    cat_art = """
+     /\\_/\\
+    ( o.o )
+     > ^ <
+    """
+    return cat_art.strip(), 200
+
 @app.get("/")
 def root():
     return MESSAGE, 200
