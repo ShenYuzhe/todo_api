@@ -1,6 +1,6 @@
 import json
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 import redis
 
 app = Flask(__name__)
@@ -46,11 +46,24 @@ def add_todo():
 @app.get("/cat")
 def get_cat():
     cat_art = """
-     /\\_/\\
-    ( o.o )
-     > ^ <
+    /\\     /\\
+    {  `---'  }
+    {  O   O  }
+    ~~>  V  <~~
+     \\  \\|/  /
+      \\-----'/
+       \\___/
+      _|   |_
+     /       \\
+    /         \\
+   |           |
+   |    /\\_/\\  |
+   |   ( o.o ) |
+   |    > ^ <  |
+    \\         /
+     \\_______/
     """
-    return cat_art.strip(), 200
+    return Response(cat_art, mimetype='text/plain')
 
 @app.get("/")
 def root():
