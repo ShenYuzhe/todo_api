@@ -22,6 +22,7 @@ def readyz():
     # 就绪探针：Redis 通了才算 ready
     try:
         r.ping()
+        
         return "ready", 200
     except Exception:
         return "not ready", 500
